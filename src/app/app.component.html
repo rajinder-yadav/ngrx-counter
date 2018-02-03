@@ -1,0 +1,19 @@
+<div class="mt3 ml3">
+  <h3>Angular 5 ngrx Counter</h3>
+  <div class="counter b1">
+    <!-- Set count value, dispatch action -->
+    <div class="mt3 ttc">
+      <label for="count">Count</label>
+      <input type="number" id="count" #count>
+      <button (click)="onSet(count.value)">Set</button>
+    </div>
+    <!-- Display count -->
+    <div class="fh4 ttc my3"> {{(count$ | async).count}}</div>
+    <!-- Event handlers, dispatch action -->
+    <div class="ttc mb3">
+      <button (click)="onUp()">Up</button>
+      <button (click)="onDown()">Down</button>
+      <button (click)="onReset()">Reset</button>
+    </div>
+  </div>
+</div>
