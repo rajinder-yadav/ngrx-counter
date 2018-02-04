@@ -1,8 +1,8 @@
 // Counter Actions
-import { CountDown,
-         CountUp,
-         CountReset,
-         CountSet,
+import { DoCounterDown,
+         DoCounterUp,
+         DoCounterReset,
+         DoCounterSet,
          CounterAction } from './counter-actions';
 
 /**
@@ -25,19 +25,19 @@ export function counterReducer( state: CounterState = initialState,
                                 action: CounterAction): CounterState {
   // Switch on Class instance to determine action type.
   switch (action.constructor) {
-    case CountUp: {
+    case DoCounterUp: {
       return new CounterState(state.count + 1);
     }
 
-    case CountDown: {
+    case DoCounterDown: {
       return new CounterState(state.count - 1);
     }
 
-    case CountReset: {
+    case DoCounterReset: {
       return new CounterState(0);
     }
 
-    case CountSet: {
+    case DoCounterSet: {
       return new CounterState(action.payload);
     }
 

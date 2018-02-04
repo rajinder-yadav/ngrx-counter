@@ -12,20 +12,25 @@ export interface CounterAction extends Action {
   payload?: number; // Optional
 }
 
-// Counter Actions.
-export class CountUp implements CounterAction {
+/**
+ * Actions: Naming convention Do<Reducer><Action>
+ * 1. Prefix with 'Do'
+ * 2. Follow by name of Reducer updating the State.
+ * 3. Action name.
+*/
+export class DoCounterUp implements CounterAction {
   readonly type: string = '[counter] up';
 }
 
-export class CountDown implements CounterAction {
+export class DoCounterDown implements CounterAction {
   readonly type: string = '[counter] down';
 }
 
-export class CountReset implements CounterAction {
+export class DoCounterReset implements CounterAction {
   readonly type: string = '[counter] reset';
 }
 
-export class CountSet implements CounterAction {
+export class DoCounterSet implements CounterAction {
   readonly type: string = '[counter] set';
   constructor(public payload: number) {}
 }
