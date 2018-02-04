@@ -8,7 +8,7 @@
       <button (click)="onSet(count.value)">Set</button>
     </div>
     <!-- Display count -->
-    <div class="fh4 ttc my3"> {{(count$ | async).count}}</div>
+    <div class="fh4 ttc my3"> {{count$ | async}}</div>
     <!-- Event handlers, dispatch action -->
     <div class="ttc mb3">
       <button (click)="onUp()">Up</button>

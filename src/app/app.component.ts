@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store, select } from '@ngrx/store';
 
-import { CounterState } from './state/counter/counter-reducer';
+import { StoreState } from './state/reducers';
 import { DoCounterUp,
          DoCounterDown,
          DoCounterReset,
@@ -16,12 +16,12 @@ import { DoCounterUp,
 })
 export class AppComponent {
   // 1 Counter stream.
-  count$: Observable<CounterState>;
+  count$: Observable<number>;
 
   // 2 Inject ngrx Store
-  constructor(private readonly store: Store<CounterState>) {
+  constructor(private readonly store: Store<StoreState>) {
     // 3 Connect Counter stream to Store Counter state.
-    this.count$ = this.store.pipe(select('counter'));
+    this.count$ = this.store.select(state => state.counter.count);
   }
 
   // Template event handlers.
